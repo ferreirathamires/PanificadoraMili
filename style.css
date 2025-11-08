@@ -1,0 +1,112 @@
+body {
+
+    background-image: url('file:///Users/thami/Documents/capacita/padaria/imagens/fundo.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    color: white;
+
+}
+
+
+form {
+    max-width: 500px;
+    margin-top: 30px;
+    margin-left: 200px;
+    margin-right: 200px;
+    border-radius: 10px;
+    background-color: darkgreen;
+    padding: 20px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+#resposta, textarea {
+    color: black;
+
+}
+
+
+#opção {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: small;
+    background-color: beige;
+}
+
+#nome {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: small;
+    background-color: beige;
+}
+
+#email {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: small;
+    background-color: beige;
+}
+
+#telefone {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: small;
+    background-color: beige;
+}
+
+#categoria, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: small;
+    background-color: beige;
+}
+
+#produto, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: small;
+    background-color: beige;
+    color: white;
+}
+
+#pedido, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: small;
+    background-color: beige;
+}
+
+button{
+    padding: 8px;
+    background-color: beige;
+    color: black;
+    border: none; 
+    border-radius: 5px;
+    font-size: small;
+
+}
+
+button:hover {
+    cursor: pointer; 
+    background-color: greenyellow;
+}

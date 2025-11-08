@@ -1,0 +1,38 @@
+//se é cnpj ou cpf, digitar cpf, nome
+
+<!DOCTYPE html>
+<html lang = "pt-br"> 
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewpoint" content="width = device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Cadastro</title>
+    </head>
+
+    <body>
+       <form id="cadastro">
+        <h2>Formulário de Cadastro</h2>
+        <label>Cadastro</label>
+        <select name="cadastro" id="cadastro">
+            <br>
+            Selecione se você é pessoa jurídica ou pessoa física
+            <option value="jurídica">Pessoa jurídica </option>
+            <option value="física">pessoa física </option>
+            <br> <br>
+            <label for="nome">Nome: </label>
+            <br>
+        <input type="text" id="nome" placeholder="Digite seu nome completo aqui...">  
+        <br> <br>
+        <label for="identidade">CPF/CNPJ:</label>
+        <br>
+        <input type="text" id="nome" placeholder="Digite seu CPF ou CNPJ aqui...">  
+        <br><br>
+        <label for="endereço">Endereço físico:</label>
+        <br>
+        <input type="text" id="endereço" placeholder="Digite aqui o endereço da sua casa ou empresa...">
+        <br><br>
+        </select>
+        <br>
+        <button>Enviar</button>
+        </form>
+    </body>

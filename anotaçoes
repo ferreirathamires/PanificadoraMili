@@ -1,0 +1,123 @@
+<img src="file:///Users/thami/Documents/capacita/padaria/imagens/padaria.jpeg" alt="background" id="background"
+
+Exercício 1 – Alterar texto com clique
+ 
+Enunciado:
+Crie um botão que, ao ser clicado, altere o texto de um parágrafo para “Texto alterado com JS”.
+ 
+Dica: use getElementById e addEventListener("click").
+ 
+ 
+Exercício 2 – Mudar cor ao passar o mouse
+ 
+Enunciado:
+Crie uma section quadrada e faça com que ela fique vermelha quando o mouse passar por cima e volte a ser preta quando o mouse sair.
+ 
+Dica: use mouseover e mouseout.
+ 
+Exercício 3 – Mostrar o que está digitando
+ 
+Enunciado:
+Crie um campo de texto e um parágrafo.
+Enquanto o usuário digita, o parágrafo deve mostrar o que está sendo escrito em tempo real.
+ 
+Dica: use o evento input.
+ 
+ 
+Exercício 4 – Formulário com preventDefault
+ 
+Enunciado:
+Crie um formulário simples com nome e botão enviar.
+Quando o usuário clicar em Enviar, o formulário não deve recarregar a página (usar preventDefault) e deve mostrar uma mensagem na tela: “Formulário enviado com sucesso!”
+ 
+
+ Carrinho:
+ //declara um array vazio que vai guardar cada item comprado (nome e preco)
+let carrinho = []
+
+//guardar o valor total da compra, mas começa com 0
+let totalCarrinho = 0
+
+
+document.querySelectorAll(".comprar").forEach(btn => { //vai percorrrer cada elemento dessa lista
+    btn.addEventListener("click" , () => { //ouvinte de eventos (clique)
+        let produto = btn.dataset.produto // le diretamente do html (atributos data nome do produto)
+
+        let preco = parseFloat(btn.dataset.preco) // equivale ler data preco
+
+        carrinho.push({produto, preco}) // adiciona um item no array do carrinho como um objeto {nome e preco}
+
+        totalCarrinho += preco // soma o preco do item ao total do carrinho 
+
+        let li = document.createElement("li") // cria um (li) para mostrar o item na lista do carrinho na ul
+        li.textContent = ${produto} - R$ ${preco.toFixed(2)} // define o texto do li com nome e preco formatado com duas casas decimais
+
+        document.getElementById("listacarrinho").appendChild(li) // adc o li na ul lista carrinho do html
+
+        document.getElementById("totalCarrinho").innerHTML = totalCarrinho.toFixed(2) //atualiza o total exibido no span com 2 casas decimais
+    })
+})
+
+// === FORM DE PEDIDOS ===
+  document.getElementById("pedidos").addEventListener("submit", (e) => {
+      e.preventDefault();// Evita que o formulário seja enviado de forma tradicional (recarregando a página)
+
+    // Número da loja no WhatsApp (use o código do país + DDD + número)
+    const numeroLoja = "5521965606229";
+
+
+    // Coletando os valores preenchidos pelo usuário nos campos do formulário
+    const nome = document.getElementById("nome").value;                 // Campo de texto "Nome"
+    const email = document.getElementById("email").value;               // Campo de email "Email"
+    const telefone = document.getElementById("telefone").value;         // Campo de telefone "Telefone"
+    const endereco = document.getElementById("endereco").value
+    const tipo = document.querySelector("input[name='tipo']:checked").value      // Radio selecionado "Tipo de pedido"
+    const quantidade = document.getElementById('quantidade').value;     // Número de unidades
+    const dataEntregaInput = document.querySelector("input[name='data_entrega']").value; // Data de entrega
+    const observacoes = document.querySelector("textarea[name='observacoes']").value; // Observações adicionais
+    
+
+    //mudar valor de data para br
+
+    let dataEntrega1 ="" //Variável que vai guardar a data formatada
+    const partes = dataEntregaInput.split("-") //O .split() é um método de string em JS q quebra uma string em partes e retorna essas partes dentro de um array.
+    dataEntrega1 = ${partes[2]}/${partes[1]}/${partes[0]}// Reorganiza para DD/MM/YYYY
+
+
+    // Monta a mensagem que será enviada para o WhatsApp
+    let mensagem = ` Novo Pedido Especial \n\n`; // Cabeçalho do pedido com emojis
+    mensagem += *Nome:* ${nome}\n;                   // Nome do cliente
+    mensagem += *Email:* ${email}\n;                 // Email do cliente
+    mensagem += *Telefone:* ${telefone}\n;         // Telefone do cliente
+    mensagem += *Endereço:* ${endereco}\n\n
+    mensagem += *Pedido:* ${tipo}\n;                 // Tipo de pedido escolhido
+    mensagem += *Quantidade:* ${quantidade}\n;       // Quantidade solicitada
+    mensagem += *Data de entrega:* ${dataEntrega1}\n\n; // Data de entrega
+    mensagem += *Observações:* ${observacoes}\n;     // Observações adicionais
+   
+
+    // Cria a URL do WhatsApp com a mensagem codificada
+    const url = https://wa.me/${numeroLoja}?text=${encodeURIComponent(mensagem)}; /*encodeURIComponent(mensagem) → transforma caracteres especiais
+     (como espaços, acentos, emojis) em formato seguro para URL.*/
+
+    // Abre uma nova aba ou janela do navegador com o WhatsApp Web ou App, já com a mensagem pronta
+    window.open(url, "_blank");
+})
+
+})//fecha o domcontentload
+
+
+
+
+
+
+// Seleciona o botão "Limpar Carrinho" e escuta o clique.
+document.getElementById("removerTodos").addEventListener('click', () => {
+    carrinho = [] // Esvazia o array (remove todos os itens).
+
+    totalCarrinho = 0 //zera o total 
+
+    document.getElementById("listacarrinho").innerHTML = "" // Limpa visualmente a lista no HTML (remove todos os <li>).
+
+    document.getElementById('totalCarrinho').innerHTML = "0.00" // Atualiza o total mostrado para 0.00.
+})

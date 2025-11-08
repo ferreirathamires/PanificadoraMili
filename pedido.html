@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang = "pt-br"> 
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewpoint" content="width = device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulário de Pedido</title>
+    </head>
+
+    <body>
+        <form id="pedidos">
+        <h2>Formulário de Pedido</h2>
+        <label>Categoria do produto</label>
+        <select name="categoria" id="categoria">
+            <option value="pães">Pães </option>
+            <option value="doces">Doces </option>
+            <option value="salgados">Salgados </option>
+            <option value="geléias">Geléias </option>
+        </select>
+        <br><br>
+
+        <label>Nos informa qual produto você deseja:</label>
+        <br>
+        <input type="text" id="produto" placeholder="Digite o produto aqui...">  
+        <br><br>
+
+        <label>Selecione qual doce você deseja:</label>
+        <select name="doce" id="doce">
+            <option value="croissantchocolate">Croissant de chocolate </option>
+            <option value="sonho">Sonho </option>
+            <option value="salgados">Salgados </option>
+        <br><br>
+
+        <label>Seu pedido será para retirada na loja ou para entrega(delivery)? </label>
+        <select name="pedido" id="pedido">
+            <option value="retirada">Retirada </option>
+            <option value="entrega">Entrega </option>
+        </select>
+        <br><br>
+
+        <button type="submit" id="enviar-pedido">Enviar pedido</button>
+        <button type="reset" id="limpar-pedido">Limpar formulário</button>
+        </form>
+    </body>

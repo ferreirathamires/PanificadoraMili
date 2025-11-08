@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang = "pt-br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width = device-width, initial-scale = 1.0">
+    <link rel="stylesheet" href="main-style.css">
+    <title>Panificadora Mili</title>
+</head>
+
+
+<header>
+    <h1>Panificadora Mili</h1>
+    <img src="padaria.jpeg" alt="background" id="background"> 
+</header>
+
+
+<body class="main-body">
+    <h2>Sobre Nós</h2>
+    <p>Somos a Panificadora Mili, padaria vegana especializada na produção de pães, doces, salgados e geleias 100% Plant-Based</p>
+    <hr>
+
+    <h2>Nossa História</h2>
+    <p>Inauguramos no início de 2021, após nossa fundadora Mili perceber que nas padarias tradicionais há poucas opções de produtos sem derivados de animais. Sendo assim, juntou sua paixão por cozinhar e criou a Panificadora Mili</p>
+   <hr>
+
+    <h2>Produção</h2>
+    <p>Trabalhamos com fabricação própria, temos uma cozinha equipada com equipamentos modernos e profissionais preparados para garantir a qualidade e frescor dos nossos produtos.</p>
+    <hr>
+
+    <h3>Produtos</h3> 
+    <ul>
+        <li>Pães</li>
+        <li>Salgados</li>
+        <li>Doces</li>
+        <li>Geléias</li>
+     </ul>
+     <hr>
+
+     <h3>Cardápio</h3>
+     <table border="5">
+        <tr>
+            <th>Categoria</th>
+            <th>Produto</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Comprar</th>
+        </tr>
+        <tr>
+            <th>Pães</th>
+            <th>Pão francês</th>
+            <th>Pão francês tradicional, com casquinha dourada crocante e miolo branco, feito de trigo, àgua, açúcar, fermento</th>
+            <th>R$0.50 U</th>
+            <th><button class="comprar" id="data-produto" data-produto="PãoFrancês" data-preco="0.50"> Comprar </button></th>
+        </tr>
+         
+        <tr>
+            <th>Pães</th>
+            <th>Pão de milho</th>
+            <th>Macio, doce, feito de farinha de trigo, leite vegetal, àgua, milho, açúcar e fubá</th>
+            <th>R$7.50 U</th>
+            <th><button class="comprar" data-produto="PaoMilho" data-preco="7.70"> Comprar </button></th>
+        </tr>        
+        <tr>
+            <th>Doces</th>
+            <th>Croissant de chocolate</th>
+            <th>Massa folhada, servido quente, feito com farinha, açúcar, sal, leite vegetal, fermento, manteiga vegetal e recheado com chocolate </th>
+            <th>R$7.00 U</th>
+            <th><button class="comprar"  data-produto="Croissant" data-preco="7.00"> Comprar </button></th>
+        </tr>
+        <tr>
+            <th>Salgados</th>
+            <th>Coxinha de Jaca</th>
+            <th>Massa crocante empanada com farinha panko, recheado de jaca cozida temperada com açafrão, salsinha, cebolinha e orégano</th>
+            <th>R$6.50 U</th>
+            <th><button class="comprar" data-produto="Coxinha" data-preco="6.50"> Comprar </button></th>
+        </tr>
+        <tr>
+            <th>Geléias</th>
+            <th>Geléia de morango</th>
+            <th>Pote de geléia natural feito com morango cozido, açúcar e suco de limão</th>
+            <th>R$23.00 U</th>
+            <th><button class="comprar" data-produto="Geléia" data-preco="23.00"> Comprar </button></th>
+        </tr>
+        <tr>
+            <th>Salgados</th>
+            <th>Empada de Palmito</th>
+            <th>Massa dourada feita de farinha, gordura vegetal e sal, recheado com palmito</th>
+            <th>R$5.00</th>
+            <th><button class="comprar" id="data-produto" data-produto="Empada" data-preco="5.00"> Comprar </button></th>
+        </tr>
+    </table>
+
+    <section id="carrinho"></section>
+        <h2>Seu Carrinho</h2>
+        <ul id="lista-carrinho"></ul>
+        <p><strong>Total: </strong>R$ <span id="totalCarrinho">0.00</span></p>
+    </section>
+    <br><br>
+
+    <section>
+        <label>Quantidade de pães
+            <input type="number" id="qtdPao" value="0">
+        </label>
+        <button onclick="calcularItem('Pao', 0.50, 'qtdPao', 'resPao')">Calcular </button>
+        <p id="resPao"></p>        
+    </section>
+    <hr>
+
+     
+     <br>
+     <section>
+        <img src="pao-frances.jpeg" alt="Pão francês"
+        width="130"
+        height="130">
+        <img src="croissant-de-chocolate.jpg" alt="Croissant recheio de chocolate"
+        width="130"
+        height="130">
+        <img src="coxinha-de-jaca.jpeg" alt="Coxinha com recheio de jaca e temperos"
+        width="130"
+        height="130">
+        <img src="geleia-de-morango.jpeg" alt="Geléia de morango"
+        width="130"
+        height="130">
+        <img src="empada-de-palmito.jpeg" alt="Empada de palmito"
+        width="130"
+        height="130">
+        
+     </section>
+
+        <table>
+            <tr>
+              <th>Dia</th>
+              <th>Horário de funcionamento</th>
+            </tr>
+            <tr>
+              <td>Segunda</td>
+              <td>06:00 às 18:00</td>
+            </tr>
+            <tr>
+              <td>Terça</td>
+              <td>06:00 às 18:00</td>
+            </tr>
+            <tr>
+                <td>Quarta</td>
+                <td>06:00 às 18:00</td>
+            </tr>
+            <tr>
+                <td>Quinta</td>
+                <td>06:00 às 18:00</td>
+            </tr>
+            <tr>
+                <td>Sexta</td>
+                <td>06:00 às 18:00</td>
+            </tr>
+            <tr>
+                <td>Sábado</td>
+                <td>08:00 às 17:00</td>
+            </tr>
+            <tr>
+                <td>Domingo</td>
+                <td>Fechado</td>
+            </tr>
+          </table>
+
+          <br><br>
+          <hr> 
+          <footer>
+        
+            Endereço: Rua Seu Geronimo, Número 123, Bairro das Rosas, São Paulo - SP. CEP 66006-66
+            <br>
+            Telefone: 7887-5335
+            <br>
+            Email: panificadoramili@gmail.com
+            <p>&copy
+             
+        </footer>
+
+        <script src="script.js"></script>
+</body>
+
+</html>
